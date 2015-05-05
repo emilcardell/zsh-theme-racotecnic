@@ -101,23 +101,23 @@ my_git_prompt_status() {
 }
 
 # color vars
-eval rt_gray='$FG[237]'
-eval rt_orange='$FG[214]'
-eval rt_blue='$FG[075]'
-eval rt_red='$FG[088]'
-eval rt_green='$FG[028]'
-eval rt_lightgreen='$FG[002]'
+eval rt_gray='%{$FG[237]%}'
+eval rt_orange='%{$FG[244]%}'
+eval rt_blue='%{$FG[015]%}'
+eval rt_red='%{$FG[009]%}'
+eval rt_green='%{$FG[028]%}'
+eval rt_lightgreen='%{$FG[002]%}'
 
 # primary prompt
-PROMPT='$FG[237]---------------------------------------------------------------------%{$reset_color%}
-$FG[032]%~\
+PROMPT='%{$terminfo[bold]%}%{$FG[012]%}%~\
 $(my_git_coloring_prompt_info)$(git_prompt_info)$(my_git_prompt_status) \
-$FG[105]%(!.#.»)%{$reset_color%} '
-PROMPT2='%{$fg[red]%}\ %{$reset_color%}'
-RPS1='${return_code}'
+%{$terminfo[bold]%}%{$FG[155]%}
+%(!.#.»)%{$reset_color%} '
+PROMPT2=''
+RPS1='%{$FG[155]%}${return_code}'
 
 # right prompt
-RPROMPT='$rt_gray%n@%m%{$reset_color%}%'
+RPROMPT=''
 
 
 # git settings
